@@ -2428,9 +2428,8 @@ client.on("message", (message) => {
         let channel = message.client.channels.find('name', args.join(' '));
         if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
         channel.delete()
-});
-
-
+    }
+});  
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

@@ -1358,8 +1358,8 @@ client.on('roleCreate', role => {
   }, 1000);
 });
 bot.on("guildMemberAdd", member => {
-      const welcomer = bot.channels.get("اي دي الروم");
-      //*let welcomer = member.guild.channels.find("name","welcome");
+      const welcomer = bot.channels.get("490116904241987614");
+      //*let welcomer = member.guild.channels.find("name","chat");
       if(!welcomer) return;
       if(welcomer) {
          moment.locale('ar-ly');

@@ -2430,25 +2430,6 @@ client.on("message", (message) => {
         channel.delete()
     }
 });  
-client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'brod') {
-    if (!args[1]) {
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-            .addField(' » الرسالة : ', args)
-        });
-    }
-    } else {
-        return;
-    }
-});
 client.on('message', function(message) {
 	const myID = "427802430701436928";
     let args = message.content.split(" ").slice(1).join(" ");
@@ -2516,5 +2497,6 @@ client.on('message', message => {
       message.author.send(`**هذا الرابط لشخص واحد و لمدة 24 ساعة **`)
     }
 });
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

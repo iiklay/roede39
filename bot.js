@@ -2449,5 +2449,61 @@ return;
         return;
     }
 });
+//**بروفايل**//
+client.on("message", message => {
+  if (message.author.bot) return;
+	if(!message.channel.guild) return;       
+if (message.content.startsWith("=profile")) {
+                               let user = message.mentions.users.first();
+         var men = message.mentions.users.first();
+            var heg;
+            if(men) {
+                heg = men
+            } else {
+                heg = message.author
+            }
+          var mentionned = message.mentions.members.first();
+             var h;
+            if(mentionned) {
+                h = mentionned
+            } else {
+                h = message.member
+            }
+            var ment = message.mentions.users.first();
+            var getvalueof;
+            if(ment) {
+              getvalueof = ment;
+            } else {
+              getvalueof = message.author;
+            }//var ghost = tf 3lek xD
+   var mentionned = message.mentions.users.first();
+
+    var client;
+      if(mentionned){
+          var client = mentionned;
+      } else {
+          var client = message.author;
+          
+      }
+  const w = ['./PicsArt_08-28-06.21.07.png'];
+if (!games[getvalueof.id]) games[getvalueof.id] = {wins: 0,loses: 0,points: 0,total: 0,credits: 100,level: 1,};          
+            let Image = Canvas.Image,
+            canvas = new Canvas(300, 300),
+            ctx = canvas.getContext('2d');       
+      fs.readFile(`${dataPro[getvalueof.id].wallSrc}`, function (err, Background) {
+          fs.readFile(`${w[0]}`, function (err, Background) {
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 297, 305);
+});
+          if (err) return console.log(err);
+          let BG = Canvas.Image;
+          let ground = new Image;
+          ground.src = Background;
+          ctx.drawImage(ground, 0, 0, 300, 305);
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

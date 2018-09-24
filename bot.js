@@ -2500,7 +2500,21 @@ client.on('message', function(message) {
            msg.delete(5000);
           message.delete(5000);
         });
+client.on('message', message => {
+    if (!message.guild) return; 
+    if (message.content.startsWith("رابط")) {
 
+        message.channel.createInvite({
+        thing: true,
+        maxUses: 1,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+  message.channel.send(`** تم أرسال الرابط برسالة خاصة **`)
 
+      message.author.send(`**هذا الرابط لشخص واحد و لمدة 24 ساعة **`)
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

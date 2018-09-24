@@ -2500,18 +2500,7 @@ client.on('message', function(message) {
            msg.delete(5000);
           message.delete(5000);
         });
-	    client.on('message', msg =>{
-    let message=msg;
-    if(message.content.startsWith("bc2")){
-        var args = message.content.split(' ').slice(1).join(' ');
-    msg.guild.members.forEach(m=>{
-        m.send(args.replace(/[user]/g,m)).catch();
-    if(message.attachments.first()){
-m.sendFile(message.attachments.first().url).catch();
-    }
-    })    ;
-    }
-});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

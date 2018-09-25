@@ -2464,13 +2464,13 @@ client.on('message', message => {
  
   if (message.content.startsWith('-brod')) {
           if (!args[0]) {
-message.channel.send("```**اكتب محتوي الرساله**```");
+message.channel.send("**اكتب محتوي الرساله**");
 return;
 }
 message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
    m.send(`${args}`);
  
-});
+}); 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

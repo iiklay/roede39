@@ -1105,18 +1105,6 @@ function getValue(key, array) {
     }
   }
 }
-
-client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('-bc')){
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});
-
 let points = {};
 const type = [
     {
@@ -3017,17 +3005,6 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceLeave);
     }
 });
-client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('-brod')){
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}
-});		
-client.on('message', message => {
    
     let args = message.content.split(' ').slice(1).join(' ');
    
@@ -3036,7 +3013,7 @@ client.on('message', message => {
   }
  
  
-  if (message.content.startsWith('-brod')) {
+  if (message.content.startsWith('-bc')) {
           if (!args[0]) {
 message.channel.send("```**-bc <message>**```");
 return;

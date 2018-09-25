@@ -3036,9 +3036,9 @@ client.on('message', message => {
   }
  
  
-  if (message.content.startsWith('+bc')) {
+  if (message.content.startsWith('-brod')) {
           if (!args[0]) {
-message.channel.send("**+bc <message>**");
+message.channel.send("```**-bc <message>**```");
 return;
 }
 message.guild.members.forEach(m => {

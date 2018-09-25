@@ -2464,7 +2464,7 @@ client.on('message', message => {
  
   if (message.content.startsWith('-brod')) {
           if (!args[0]) {
-message.channel.send("** -brod <message>**");
+message.channel.send("```**اكتب محتوي الرساله**```");
 return;
 }
 message.guild.members.forEach(m => {

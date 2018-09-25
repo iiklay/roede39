@@ -302,7 +302,7 @@ client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=439815697128882177&permissions=0&scope=bot')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
   .setDescription(`**
   New Server Add Speed Bot ✅
 اسم السيرفر: ${guild.name}
@@ -314,7 +314,7 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=439815697128882177&permissions=0&scope=bot')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
   .setDescription(`**
   Server Kicked Speed Bot :cry:
 اسم السيرفر: ${guild.name}
@@ -1105,6 +1105,29 @@ function getValue(key, array) {
     }
   }
 }
+
+client.on('message', message => {
+   
+    let args = message.content.split(' ').slice(1).join(' ');
+   
+  if (message.content === 'ping') {
+      message.channel.send(`<@${message.author.id}> Ping..!`)
+  }
+ 
+ 
+  if (message.content.startsWith('-bc')) {
+          if (!args[0]) {
+message.channel.send("**+bc <message>**");
+return;
+}
+message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+   m.send(`${args}`);
+ 
+});
+  }
+ 
+});
 let points = {};
 const type = [
     {
@@ -2235,7 +2258,7 @@ client.on('message', message => {
         let embed = new Discord.RichEmbed()
         .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: اضغط هنا `)
-        .setURL(`https://discordapp.com/oauth2/authorize?client_id=439815697128882177&permissions=8&scope=bot`)
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot`)
         .setThumbnail(" https://cdn.discordapp.com/avatars/377904849783750667/6c76e412f18c142dfd711d05fb363869.png?size=2048")        
      message.channel.sendEmbed(embed);
        }
@@ -2384,7 +2407,8 @@ client.on("message", (message) => {
         if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
         channel.delete()
     }
-});  
+}); 
+ });  
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -2460,7 +2484,7 @@ client.on('message', function(message) {
           message.delete(5000);
         });
     }
-});client.on('messageDelete', message => {
+	client.on('messageDelete', message => {
  
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
@@ -2716,7 +2740,7 @@ client.on('guildBanAdd', (guild, user) => {
     if(!guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = guild.channels.find(c => c.name === 'log4ever');
+    var logChannel = guild.channels.find(c => c.name === 'log');
     if(!logChannel) return;
  
     guild.fetchAuditLogs().then(logs => {
@@ -3005,26 +3029,79 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceLeave);
     }
 });
-   
-    let args = message.content.split(' ').slice(1).join(' ');
-   
-  if (message.content === 'ping') {
-      message.channel.send(`<@${message.author.id}> Ping..!`)
-  }
+    if(command === "-top") {
+      const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
+      const embed = new Discord.RichEmbed()
+        .setTitle("**TOP 10 TEXT** :speech_balloon:")
+        .setAuthor('📋 Guild Score Leaderboards', message.guild.iconURL)
+        .setColor(0x00AE86);
  
- 
-  if (message.content.startsWith('-bc')) {
-          if (!args[0]) {
-message.channel.send("```**-bc <message>**```");
-return;
+      for(const data of top10) {
+        embed.addField(client.users.get(data.user).tag, `XP: \`${data.points}\` | LVL: \`${data.level}\``);
+      }
+      return message.channel.send({embed});
+    }
+   
+  });
+client.on('message',async msg => {
+     if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return;
+  var p = "-";
+  if(msg.content.startsWith(p + "معلومات السيرفر")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
+  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
+                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
+       al.setParent(kk);
+       alp.setParent(kk);
+       alph.setParent(kk);
+       
+     al.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+     alp.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+     alph.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+  setInterval(() => {
+      var currentTime = new Date(),
+hours = currentTime.getHours() + 3 ,
+minutes = currentTime.getMinutes(),
+Seconds = currentTime.getSeconds(),
+Year = currentTime.getFullYear(),
+Month = currentTime.getMonth() + 1,
+Dat = currentTime.getDate()
+if (minutes < 10) {
+minutes = "0" + minutes;
 }
-message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-   m.send(`${args}`);
- 
-});
+var suffix = "AM";
+if (hours >= 12) {
+suffix = "PM";
+hours = hours - 12;
+}
+if (hours == 0) {
+hours = 12;
+}
+     al.setName(`Voice Online :[ ${msg.guild.members.filter(m => m.voiceChannel).size} ]`);
+      alp.setName(`Time :[${hours} : ${minutes} : ${Seconds} ${suffix}]`);
+        alph.setName(`[ Date : [${Year} - ${Month} - ${Dat} ]`);
+ },1000);
+                   })
+    
+                })
+           })
+  })
+           
   }
  
 });
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

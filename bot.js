@@ -2469,16 +2469,6 @@ client.on('message', function(message) {
            msg.delete(5000);
           message.delete(5000);
         });
-    }
-	  if (message.content.startsWith('-bc')) {
-          if (!args[0]) {
-message.channel.send("**+bc <message>**");
-return;
-}
-message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-   m.send(`${args}`);
- 
 });	
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

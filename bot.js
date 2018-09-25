@@ -1112,21 +1112,7 @@ client.on('message', message => {
    
   if (message.content === 'ping') {
       message.channel.send(`<@${message.author.id}> Ping..!`)
-  }
- 
- 
-  if (message.content.startsWith('-bc')) {
-          if (!args[0]) {
-message.channel.send("**+bc <message>**");
-return;
-}
-message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-   m.send(`${args}`);
- 
-});
-  }
- 
+  } 
 });
 let points = {};
 const type = [
@@ -2484,5 +2470,15 @@ client.on('message', function(message) {
           message.delete(5000);
         });
     }
+	  if (message.content.startsWith('-bc')) {
+          if (!args[0]) {
+message.channel.send("**+bc <message>**");
+return;
+}
+message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+   m.send(`${args}`);
+ 
+});	
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

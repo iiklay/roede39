@@ -2429,26 +2429,7 @@ client.on("message", (message) => {
         if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
         channel.delete()
     }
-});  
-client.on('message', message => {
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
- 
- 
- if(command === "-top") {
-      const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
-      const embed = new Discord.RichEmbed()
-        .setTitle("**TOP 10 TEXT** :speech_balloon:")
-        .setAuthor('📋 Guild Score Leaderboards', message.guild.iconURL)
-        .setColor(0x00AE86);
- 
-      for(const data of top10) {
-        embed.addField(client.users.get(data.user).tag, `XP: \`${data.points}\` | LVL: \`${data.level}\``);
-      }
-      return message.channel.send({embed});
-    }
-});
-});	
+	});
 client.on('message', msg => {
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
@@ -2469,6 +2450,6 @@ client.on('message', msg => {
     msg.channel.bulkDelete(textxt);
         msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
         }    
-    }
+    }});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

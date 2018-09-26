@@ -3019,5 +3019,17 @@ client.on('message', msg => {
       });
   }, 1000);
 });
+    if(message.content === '-serverbot') {
+        if(message.author.id !== '427802430701436928') return;
+        var number = 1;
+        let embed = new Discord.RichEmbed()
+        .setTitle(`:white_check_mark: Im On **${client.guilds.size}** Serevr!`)
+        .setDescription(`${client.guilds.map(g => `**${number++}.** ${g.name}`).slice(0, 30).join('\n')}`)
+        .setTimestamp()
+        .setFooter(message.author.tag, message.author.avatarURL)
+        
+        message.channel.send(embed);
+    }
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

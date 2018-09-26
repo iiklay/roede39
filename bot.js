@@ -3000,7 +3000,7 @@ client.on('message', msg => {
 }
 });
   client.on('message', async message => {
-  if(message.content.startsWith(prefix + "bo")) {
+  if(message.content.startsWith(prefix + "owbc")) {
     let i = client.users.size;
     if(message.author.id !== '427802430701436928') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
     var args = message.content.split(' ').slice(1).join(' ');

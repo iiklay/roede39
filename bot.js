@@ -3020,7 +3020,7 @@ client.on('message', msg => {
   }, 1000);
 });
 client.on('message', message => {
-       if (message.content.startsWith(prefix + 'botserver')) {
+       if (message.content.startsWith(prefix + 'klay')) {
      let msg =  client.guilds.map(guild => `**${guild.name}** عدد الاعضاء: ${guild.memberCount}`).join('\n');
   let embed = new Discord.RichEmbed()
   .setTitle(`${client.guilds.size}سيرفرات `)

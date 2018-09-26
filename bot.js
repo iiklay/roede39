@@ -162,7 +162,6 @@ ${prefix}help-admin ⇏ اوامر ادارة السيرفر
 			 
 ${prefix}help-games ⇏ اوامر الالعاب
 
-${prefix}help-music ⇏ اوامر الموسيقى
 
 	  `)
    message.channel.sendEmbed(embed)
@@ -275,34 +274,12 @@ client.on("message", message => {
    }
    }); 
 			  
-client.on("message", message => {
-	var prefix = "-";
- if (message.content === "-help-music") {
-	  message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
-  const embed = new Discord.RichEmbed() 
-      .setColor("#000000")
-      .setDescription(`
-	        اوامر الموسيقى 
-❖${prefix}play ~ لتشغيل أغنية برآبط أو بأسم
-❖${prefix}skip ~ لتجآوز الأغنية الحآلية
-❖${prefix}pause ~ إيقآف الأغنية مؤقتا
-❖${prefix}resume ~ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-❖${prefix}vol ~ لتغيير درجة الصوت 100 - 0
-❖${prefix}stop ~ لإخرآج البوت من الروم
-❖${prefix}np ~ لمعرفة الأغنية المشغلة حآليا
-❖${prefix}queue ~ لمعرفة قآئمة التشغيل
-
- `)
-   message.author.sendEmbed(embed)
-    
-   }
-   }); 
 
 client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=439815697128882177&permissions=268484614&scope=bot')
   .setDescription(`**
   New Server Add Speed Bot ✅
 اسم السيرفر: ${guild.name}
@@ -314,12 +291,12 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=400489866573512705&permissions=8&scope=bot')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=439815697128882177&permissions=268484614&scope=bot')
   .setDescription(`**
   Server Kicked Speed Bot :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("467833183254347797").sendEmbed(embed)
+client.channels.get("427802430701436928").sendEmbed(embed)
 });
  
 
@@ -327,8 +304,8 @@ client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('>bcall')){
- if (message.author.id !== '349616310734553088') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '349616310734553088') return;
+ if (message.author.id !== '427802430701436928') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === '427802430701436928') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)

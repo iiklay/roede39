@@ -315,17 +315,7 @@ m.sendMessage(args)
 }
 });
 
-const client = new Discord.Client();
- 
-/*
-البكجآت
-npm install discord.js
-npm install ytdl-core
-npm install get-youtube-id
-npm install youtube-info
-npm install simple-youtube-api
-npm install queue
-*/
+
  
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);

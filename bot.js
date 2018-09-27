@@ -284,7 +284,7 @@ client.on('guildCreate', guild => {
   New Server Add Speed Bot ✅
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("467833183254347797").sendEmbed(embed)
+client.channels.get("427802430701436928").sendEmbed(embed)
 });
 
 client.on('guildDelete', guild => {
@@ -499,8 +499,8 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
-const adminprefix = "-v";
-const devs = ['349616310734553088','335027415619338240'];
+const adminprefix = "-k";
+const devs = ['427802430701436928'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -1943,7 +1943,7 @@ const cuttweet = [     'كت تويت ‏| تخيّل لو أنك سترسم ش�
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('Speed bot' ,
+ .addField('elder bot' ,
   `${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -2042,7 +2042,7 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.users.get("349616310734553088","335027415619338240").send(
+client.users.get("427802430701436928","427802430701436928").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +

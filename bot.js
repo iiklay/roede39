@@ -3049,7 +3049,7 @@ fs.writeFile("./creditsCode.json", JSON.stringify(credits), (err) => {
       credits: m + 0.5,
   }
  
-    if(message.content.startsWith(prefix + "credit")) {
+    if(message.content.startsWith(prefix + "credit" || prefix + "credits")) {
 message.channel.send(`**${message.author.username}, your :credit_card: balance is \`\`${userData.credits}\`\`.**`);
 }
 });
@@ -3078,14 +3078,6 @@ client.on('message', async message => {
        coolDown.remove(message.author.id);
     },86400000);
     }
-});
-client.on("message", (message) => {
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-    if(!message.channel.guild) return;      
-if (mes=age.content === '-credits') {
-message.channel.send(`** ${message.author.username}, your :credit_card: balance is ${games[message.author.id].credits}.**`)
-}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

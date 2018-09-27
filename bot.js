@@ -3079,5 +3079,13 @@ client.on('message', async message => {
     },86400000);
     }
 });
+client.on("message", (message) => {
+  if (message.author.bot) return;
+    if (message.author.id === client.user.id) return;
+    if(!message.channel.guild) return;      
+if (mes=age.content === '-تحويل') {
+message.channel.send(`** ${message.author.username}, your :credit_card: balance is ${games[message.author.id].credits}.**`)
+}
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

@@ -315,7 +315,6 @@ m.sendMessage(args)
 }
 });
 
-const queue = new Map();
 const client = new Discord.Client();
  
 /*

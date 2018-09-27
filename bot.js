@@ -3048,14 +3048,5 @@ message.author.send(`**مدة الرابط : يـوم
 
     }
 });
-client.on('message', message => {
-    if(messae.content.startsWith('-say')) {
-        if(message.author.bot) return;
-        var args = message.content.split(' ').slice(1).join(' ');
-        if(!args) return message.channel.send(${prefix}say <SAY>);
-        message.delete();
-        message.channel.send(args);
-    }
-});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

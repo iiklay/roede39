@@ -315,7 +315,6 @@ m.sendMessage(args)
 }
 });
 
-const Discord = require('discord.js')
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
@@ -342,7 +341,7 @@ client.on('ready', () => {
     client.user.setStatus("idle")
 });
 client.on('ready', () => {
-     client.user.setActivity("you",{type: 'WATCHING'});
+     client.user.setActivity("-inv | -help ",{type: 'WATCHING'});
  
 });
 const prefix = "-"

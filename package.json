@@ -48,6 +48,18 @@
      "queue": "^4.4.2",
      "rebuild": "^0.1.2",
      "simple-youtube-api": "^5.0.2",
+     },
+  "keywords": [
+    "heroku",
+    "discord.js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/synicalsyntax/discord.js-heroku/issues"
+  },
+  "homepage": "https://github.com/synicalsyntax/discord.js-heroku#readme"
+}
 
 
   }

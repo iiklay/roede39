@@ -244,6 +244,7 @@ client.on("message", message => {
 ❖-ct <name> ~ انشاء شات
 ❖-cv <name> ~ انشاء رووم فويس
 ❖-delet <name> ~ مسح الشات او الرووم فويس
+❖-setvoice ~ لانشاء فويس اونلاين
 ❖-ccolors <number> ~ ينشا لك الوان مع كم الوان تبي
 `)
    message.author.sendEmbed(embed)

@@ -3203,7 +3203,6 @@ client.setInterval(function() {
   }, time);
 }
 })
-  const fs = require('fs');
 const db = fs.database();
 client.oN("message", message => {
         if (message.content === "-setprefix") {

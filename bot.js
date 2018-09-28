@@ -3203,9 +3203,7 @@ client.setInterval(function() {
   }, time);
 }
 });
-const Discord = require("discord.js");
 const client = new Discord.Client();
-const fs = require("fs");
 let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
  
 client.on("message", message => {

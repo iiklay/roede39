@@ -3202,58 +3202,6 @@ client.setInterval(function() {
     client.login(token) // لا تغيرها
   }, time);
 }
-})
-client.on("message", message => {
-        if (message.content === "-setprefix") {
-        if (message.author.id !== "427802430701436928" && !message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`U don't have permission to do that`);
-  let args = message.content.split(" ").slice(1);
-        let arg = args.join("").substring(message.length)
-        if (!arg) return message.channel.send(`Please add a prefix after command like \`\`${prefix}setprefix &\`\``);
-        fs.database().ref('servers/' + message.guild.id).update({
-            guildname: message.guild.name,
-            guildprefix: arg
-        }).catch(function(err) {
-            message.channel.send(err + "\n\n\n");
-        });
-        message.channel.send(`prefix updated ${arg} for ${message.guild.name}`);
-    }
-});
-const res = JSON.parse(fs.readFileSync('./responses.json' , 'utf8'));
-client.on('message', async message => {
-    let messageArray = message.content.split(" ");
-   if(message.content.startsWith(prefix + "setMsg")) {
-    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('You don\'t have permission').then(msg => {
-       msg.delete(4500);
-       message.delete(4500);
-    });
-    
-    if(!messageArray[1]) return message.channel.send('Supply a message!').then(msg => {
-       msg.delete(4500);
-       message.delete(4500);
-    });
-    if(!messageArray[2]) return message.channel.send('Suplly a response!').then(msg => {
-       msg.delete(4500);
-       message.delete(4500);
-    });
-    message.reply('Preparing...').then(msg => {
-        setTimeout(() => {
-           msg.edit(':white_check_mark: Done!.'); 
-        },5000);
-    });
-    res[message.guild.id] = {
-        msg: messageArray[1],
-        response: messageArray[2],
-    };
-    fs.writeFile("./responses.json", JSON.stringify(res), (err) => {
-    if (err) console.error(err);
-  });
-   } 
-});
-
-client.on('message', async message => {
-   if(message.content === res[message.guild.id].msg) {
-       message.channel.send(res[message.guild.id].response);
-   }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

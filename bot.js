@@ -3205,7 +3205,7 @@ client.setInterval(function() {
 });
 client.on('message', message => {
 const yt = require('ytdl-core');
-  if (message.content.startsWith('-quran')) {
+  if (message.content.startsWith('-قران')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;
@@ -3222,7 +3222,7 @@ const yt = require('ytdl-core');
       });
   }
   
-  if (message.content.startsWith('-stop')) {
+  if (message.content.startsWith('-توقف')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;

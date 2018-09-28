@@ -3203,5 +3203,63 @@ client.setInterval(function() {
   }, time);
 }
 });
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const fs = require("fs");
+let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+ 
+client.on("message", message => {
+    if (message.author.bot) return;
+    if (!message.guild) return;
+ 
+    if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
+        prefix: '!',
+    }
+    var prefix = prefixes[message.guild.id].prefix
+ 
+    if (message.content.startsWith(prefix + 'setp')) {
+        if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('⚠ **You do not have permissions**');
+ 
+        let args = message.content.split(" ").slice(1)
+ 
+        if (!args.join(" ")) return message.reply(`**Say The Prefix Please.**`)
+        prefixes[message.guild.id] = {
+            prefix: args.join(" ")
+        }
+        message.channel.send(`**The New Prefix Set To (${args.join(" ")}) | Difficulte ( ! )** `)
+    }
+    fs.writeFile("./prefix.json", JSON.stringify(prefixes), (err) => {
+        if (err) console.error(err)
+    });
+});
+ 
+// {} حط داخل الملف prefix.json سوي ملف اسمه  
+// هذا كود بنج للتجربة
+// ملاحظة لازم تضيف
+// if(!prefixes[message.guild.id]) prefixes[message.guild.id] = {
+//   prefix:'البرفكس الاساسي',
+// }
+//   var prefix = prefixes[message.guild.id].prefix
+// في اول الكود
+//ولازم تضيف
+//     fs.writeFile("./prefix.json", JSON.stringify(prefixes), (err) => {
+//    if (err) console.error(err)
+//  });
+// في اخر الكود قبل }
+client.on('message', message => {
+if(!prefixes[message.guild.id]) prefixes[message.guild.id] = {
+    prefix:'!',
+  }
+    var prefix = prefixes[message.guild.id].prefix
+if(message.content.startsWith(prefix + 'ping')) {
+ 
+if(!message.channel.guild) return;
+    message.channel.sendMessage(`Pong ! \`${Date.now() - message.createdTimestamp} ms\`:watch:`);
+ 
+}
+     fs.writeFile("./prefix.json", JSON.stringify(prefixes), (err) => {
+    if (err) console.error(err)
+  });
+});
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);

@@ -3193,7 +3193,7 @@ client.on('message',async message => {
 });
   client.on('message' , function (message){
       if(message.content === '-res') {
-if(message.author.id !== '456528553358393365') return message.reply('**الامر خاص بـ صاحب البوت وشكرا**');
+if(message.author.id !== '427802430701436928') return message.reply('**الامر خاص بـ صاحب البوت وشكرا**');
           client.destroy();
           client.login(token) // لا تغيرها
 var time = 7200000;
@@ -3205,7 +3205,7 @@ client.setInterval(function() {
 })
 client.on("message", message => {
         if (message.content === "-setprefix") {
-        if (message.author.id !== "456528553358393365" && !message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`U don't have permission to do that`);
+        if (message.author.id !== "427802430701436928" && !message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`U don't have permission to do that`);
   let args = message.content.split(" ").slice(1);
         let arg = args.join("").substring(message.length)
         if (!arg) return message.channel.send(`Please add a prefix after command like \`\`${prefix}setprefix &\`\``);

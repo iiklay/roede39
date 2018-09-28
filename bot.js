@@ -3203,7 +3203,6 @@ client.setInterval(function() {
   }, time);
 }
 });
-const client = new Discord.Client();
 let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
  
 client.on("message", message => {
@@ -3211,7 +3210,7 @@ client.on("message", message => {
     if (!message.guild) return;
  
     if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '!',
+        prefix: '-',
     }
     var prefix = prefixes[message.guild.id].prefix
  
@@ -3246,7 +3245,7 @@ client.on("message", message => {
 // في اخر الكود قبل }
 client.on('message', message => {
 if(!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-    prefix:'!',
+    prefix:'-',
   }
     var prefix = prefixes[message.guild.id].prefix
 if(message.content.startsWith(prefix + 'ping')) {

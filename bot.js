@@ -79,7 +79,6 @@ message.author.send(`**مدة الرابط : يـوم
 .addField("My Language");
 
     return message.channel.send(botEmbed);
-  }
 });
   client.on('message', async message => {
   if(message.content.startsWith(prefix + "bcow")) {

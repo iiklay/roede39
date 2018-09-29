@@ -170,7 +170,7 @@ message.channel.send(id)
         }
     }
 });
- KiNg66S.on('message', function(KiNg66S) {
+client.on('message', async message => {
 if (KiNg66S.author.bot) return;
 if (KiNg66S.author.id === KiNg66S.user.id) return;
 if (KiNg66S.author.equals(KiNg66S.user)) return;

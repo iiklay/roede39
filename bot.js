@@ -500,4 +500,4 @@ if (message.member.voiceChannel == null) return message.channel.send(`**الرج
    });
 
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);

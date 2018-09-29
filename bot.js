@@ -54,7 +54,7 @@ message.author.send(`**مدة الرابط : يـوم
 
     }
 });
-    bot.on("message", async message => {
+   KiNg66S.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
   let prefix = botconfig.prefix;

@@ -2226,7 +2226,7 @@ var prefix = "-";
             SEND_MESSAGES: false
 
               }).then(() => {
-                  message.reply("**__تم تقفيل الشات__ :white_check_mark: **")
+                  message.reply("```**__تم تقفيل الشات__ :white_check_mark: **```")
               });
                 }
 //FIRE BOT
@@ -2238,7 +2238,7 @@ var prefix = "-";
             SEND_MESSAGES: true
 
               }).then(() => {
-                  message.reply("**__تم فتح الشات__:white_check_mark:**")
+                  message.reply("```**__تم فتح الشات__:white_check_mark:**```")
               });
     }
        
@@ -2412,7 +2412,7 @@ if (message.content.startsWith("-ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
-message.channel.sendMessage('```تـم إنـشاء روم كـتابـي```')
+message.channel.sendMessage('**```تـم إنـشاء روم كـتابـي```**')
 
 }
 });
@@ -2423,7 +2423,7 @@ if (message.content.startsWith("-cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
-    message.channel.sendMessage('```تـم إنـشاء روم صـوتي```')
+    message.channel.sendMessage('```**تـم إنـشاء روم صـوتي**```')
     
 }
 });

@@ -2226,7 +2226,7 @@ var prefix = "-";
             SEND_MESSAGES: false
 
               }).then(() => {
-                  message.reply("```**__تم تقفيل الشات__ :white_check_mark: **```")
+                  message.reply("**```تم تقفيل الشات```**")
               });
                 }
 //FIRE BOT
@@ -2238,7 +2238,7 @@ var prefix = "-";
             SEND_MESSAGES: true
 
               }).then(() => {
-                  message.reply("```**__تم فتح الشات__:white_check_mark:**```")
+                  message.reply("**```فتح الشات```**")
               });
     }
        

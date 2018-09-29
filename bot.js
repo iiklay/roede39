@@ -121,7 +121,7 @@ channel.guild.owner.send(`<@!${channelremover.id}>
   });
 
 client.on('message', msg => {
-	var prefix = "+";
+	var prefix = "-";
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
@@ -147,8 +147,8 @@ client.on('message', msg => {
 
 
 client.on("message", message => {
-	var prefix = "+";
- if (message.content === "+help") {
+	var prefix = "-";
+ if (message.content === "-help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#000000") 
       .setDescription(`
@@ -171,8 +171,8 @@ ${prefix}help-games ⇏ اوامر الالعاب
   
 
 client.on("message", message => {
-	var prefix = "+";
- if (message.content === "+help-public") {
+	var prefix = "-";
+ if (message.content === "-help-public") {
 	 message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")

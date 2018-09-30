@@ -336,8 +336,9 @@ if (message.content === '+help') {
                 .setColor('RANDOM')
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
-  
-});
+})
+})
+})
 }
 });
   client.on('message', message => {

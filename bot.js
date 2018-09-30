@@ -44,8 +44,7 @@ if (message.content === '+help') {
                 .addField("**+move **" , "لسحب شخص لي رومك")
                 .addField("**+allmove **" , "لسحب الجميع لي رومك")
                 .setColor('RANDOM')
-  message.author.sendEmbed(embed);
- }
+  message.author.sendEmbed(embed)
  });
 
 

@@ -1,2 +1,0 @@
-# SBot-Sboter
-hleolrelrleroeoroer

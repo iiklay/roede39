@@ -1,13 +1,34 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '+';
 
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(` اكتب اي شي هنا  `,"http://twitch.tv/S-F")
+  console.log('')
+  console.log('')
+  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+  console.log(`[Start] ${new Date()}`);
+  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════════════════════════════]╗');
+  console.log(`Logged in as * [ " ${client.user.username} " ]`);
+  console.log('')
+  console.log('Informations :')
+  console.log('')
+  console.log(`servers! [ " ${client.guilds.size} " ]`);
+  console.log(`Users! [ " ${client.users.size} " ]`);
+  console.log(`channels! [ " ${client.channels.size} " ]`);
+  console.log('╚[════════════════════════════════════]╝')
+  console.log('')
+  console.log('╔[════════════]╗')
+  console.log(' Bot Is Online ')
+  console.log('╚[════════════]╝')
+  console.log('')
+  console.log('')
 });
 
-
 client.on('message',async message => {
+    var prefix = "+";
   if(message.content.startsWith(prefix + "setvoice")) {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
   if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
@@ -56,6 +77,7 @@ message.author.send(`**مدة الرابط : يـوم
 });
 
   client.on('message', async message => {
+      var prefix = "+";
   if(message.content.startsWith(prefix + "bcow")) {
     let i = client.users.size;
     if(message.author.id !== 'اي دي صاحب البوت') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
@@ -70,6 +92,7 @@ message.author.send(`**مدة الرابط : يـوم
   }
 });
   client.on('message', message => {
+      var prefix = "+";
     if (message.content.startsWith(prefix + "هويتي")) {
 var args = message.content.split(" ").slice(1);
 let user = message.mentions.users.first();
@@ -97,9 +120,10 @@ var id = new  Discord.RichEmbed()
 .addField(`: الرتب`, `${message.guild.members.get(h.id).roles.map(r => `\`${r.name}\``).slice(1).join('\n') || 'لايوجد رتب'}`,true)                                                    
 .setThumbnail(heg.avatarURL);
 message.channel.send(id)
-}       });
+}      
+});
   client.on("message", message => {
- 
+    var prefix = "+";
     var args = message.content.split(' ').slice(1);
     var msg = message.content.toLowerCase();
     if( !message.guild ) return;
@@ -212,6 +236,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 }
 });
 client.on('message', message => {
+    var prefix = "+";
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
@@ -314,6 +339,7 @@ if (message.content === '+help') {
     }
 });
 client.on('message', async message => {
+    var prefix = "+";
   let args = message.content.split(" ");
   if(message.content.startsWith(prefix + "mute")) {
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
@@ -429,7 +455,7 @@ const prefix = "+";
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "kick") {
+  if (command == "+kick") {
                if(!message.channel.guild) return;
          
   if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You Don't Have KICK_MEMBERS Permission").then(msg => msg.delete(5000));

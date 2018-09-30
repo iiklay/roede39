@@ -334,7 +334,6 @@ if (message.content === '+help') {
                 .addField("**+allmove **" , "لسحب الجميع لي رومك")
               
                 .setColor('RANDOM')
-.setColor('RANDOM')
   message.author.sendEmbed(embed);
 })
 })

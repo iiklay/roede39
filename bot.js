@@ -27,7 +27,7 @@ client.user.setGame(` اكتب اي شي هنا  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.on('message',async message => {
+client.on('message', msg => {
     var prefix = "+";
   if(message.content.startsWith(prefix + "setvoice")) {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
@@ -76,7 +76,7 @@ message.author.send(`**مدة الرابط : يـوم
     }
 });
 
-  client.on('message', async message => {
+client.on('message', msg => {
       var prefix = "+";
   if(message.content.startsWith(prefix + "bcow")) {
     let i = client.users.size;
@@ -91,7 +91,7 @@ message.author.send(`**مدة الرابط : يـوم
     });
   }
 });
-  client.on('message', message => {
+client.on('message', msg => {
       var prefix = "+";
     if (message.content.startsWith(prefix + "هويتي")) {
 var args = message.content.split(" ").slice(1);
@@ -122,7 +122,7 @@ var id = new  Discord.RichEmbed()
 message.channel.send(id)
 }      
 });
-  client.on("message", message => {
+client.on('message', msg => {
     var prefix = "+";
     var args = message.content.split(' ').slice(1);
     var msg = message.content.toLowerCase();
@@ -217,7 +217,7 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "+ban") {
+  if (command == "ban") {
                if(!message.channel.guild) return message.reply('** This command only for servers**');
          
   if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك الصلاحيات المطلوبه**");
@@ -338,7 +338,7 @@ if (message.content === '+help') {
   message.author.sendEmbed(embed);
     }
 });
-client.on('message', async message => {
+client.on('message', msg => {
     var prefix = "+";
   let args = message.content.split(" ");
   if(message.content.startsWith(prefix + "mute")) {

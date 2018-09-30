@@ -335,11 +335,8 @@ if (message.content === '+help') {
               
                 .setColor('RANDOM')
   message.author.sendEmbed(embed);
-})
-})
-})
-}
-});
+ }
+ });
   client.on('message', message => {
     var prefix = "+";
   let args = message.content.split(" ");

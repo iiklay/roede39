@@ -337,7 +337,7 @@ if (message.content === '+help') {
   message.author.sendEmbed(embed);
  }
  });
-  client.on('message', message => {
+client.on('message', message => {
 const prefix = "+";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
@@ -347,7 +347,7 @@ const prefix = "+";
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "+kick") {
+  if (command == "kick") {
                if(!message.channel.guild) return;
          
   if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("You Don't Have KICK_MEMBERS Permission").then(msg => msg.delete(5000));

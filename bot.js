@@ -27,7 +27,7 @@ client.user.setGame(` اكتب اي شي هنا  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.on('message', msg => {
+client.on('message', message => {
     var prefix = "+";
   if(message.content.startsWith(prefix + "setvoice")) {
   if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
@@ -45,7 +45,7 @@ client.on('message', msg => {
   });
   }
 });
-  client.on('message' , function (message){
+  client.on('message', message => {
       if(message.content === '+res') {
 if(message.author.id !== '427802430701436928') return message.reply('**الامر خاص بـ صاحب البوت وشكرا**');
           client.destroy();
@@ -76,7 +76,7 @@ message.author.send(`**مدة الرابط : يـوم
     }
 });
 
-client.on('message', msg => {
+  client.on('message', message => {
       var prefix = "+";
   if(message.content.startsWith(prefix + "bcow")) {
     let i = client.users.size;
@@ -91,7 +91,7 @@ client.on('message', msg => {
     });
   }
 });
-client.on('message', msg => {
+ client.on('message', message => {
       var prefix = "+";
     if (message.content.startsWith(prefix + "هويتي")) {
 var args = message.content.split(" ").slice(1);
@@ -122,7 +122,7 @@ var id = new  Discord.RichEmbed()
 message.channel.send(id)
 }      
 });
-client.on('message', msg => {
+  client.on('message', message => {
     var prefix = "+";
     var args = message.content.split(' ').slice(1);
     var msg = message.content.toLowerCase();
@@ -202,7 +202,7 @@ return;
 }
 }
 });
- client.on('message', message => {
+  client.on('message', message => {
         var  user = message.mentions.users.first() || message.author;
     if (message.content.startsWith("+avatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
@@ -235,7 +235,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 }
 });
-client.on('message', message => {
+  client.on('message', message => {
     var prefix = "+";
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply(' ');
@@ -259,7 +259,7 @@ message.channel.sendEmbed(embed)
 
 }
 });
-client.on('message', msg => {
+  client.on('message', message => {
 var prefix = "+";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'ve')) {
@@ -288,7 +288,7 @@ msg.guild.createChannel(args.join(' '), 'voice');
 })
 }
 });
-client.on('message', msg => {
+  client.on('message', message => {
 var prefix = "+";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'tt')) {
@@ -338,7 +338,7 @@ if (message.content === '+help') {
   message.author.sendEmbed(embed);
     }
 });
-client.on('message', msg => {
+  client.on('message', message => {
     var prefix = "+";
   let args = message.content.split(" ");
   if(message.content.startsWith(prefix + "mute")) {
@@ -445,7 +445,7 @@ client.on('message', msg => {
       message.channel.send(`**:white_check_mark: ${mention.user.username} Unmuted ! **  `);
   }
 });
-client.on('message', message => {
+  client.on('message', message => {
 const prefix = "+";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;

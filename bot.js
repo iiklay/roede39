@@ -337,15 +337,16 @@ if (message.content === '+help') {
   message.author.sendEmbed(embed);
  }
  });
-  client.on('message', message => {
-    var prefix = "+";
-  let args = message.content.split(" ");
-  if(message.content.startsWith(prefix + "mute")) {
+client.on('message', message => {
+    
+  let args = message.content.split(" "); 
+  if (message.content ===  "+mute") { 
     if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة :  يجب ان يكون لديك برمشن أداري . ').then(msg => {
       msg.delete(3500);
       message.delete(3500);
-    });
- 
+    }
+      )};
+    });                       
     if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('# - ملحوظة : يجب ان يكون البوت لديه برمشن أداري').then(msg => {
       msg.delete(3500);
       message.delete(3500);

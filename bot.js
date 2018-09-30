@@ -336,6 +336,7 @@ if (message.content === '+help') {
                 .setColor('RANDOM')
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
+  
 });
 }
 });
